@@ -1,3 +1,4 @@
+import 'package:capital_bites/repository/stock_data_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -6,10 +7,14 @@ abstract class StockDataState extends Equatable {}
 //Model remove once repo gets created
 class StockData {
   final String companyName;
-  final String summary;
+  final String tickerSymbol;
+  final double forecast;
+  final double sentiment;
+  final double currentPrice;
+  final List<ArticleSummary> articleSummaries;
   final Image image;
 
-  StockData({this.companyName, this.summary, this.image});
+  StockData({this.companyName, this.currentPrice, this.articleSummaries, this.image, this.sentiment, this.forecast, this.tickerSymbol});
 
 }
 
